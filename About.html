@@ -3,67 +3,394 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>About Page</title>
-</head>
-<body>
-     <header>
-        <div class="Nav-links">
-        <a href="./index.html">Home</a>
-        <a href="./About.html">About</a>
-        <a href="./Service.html">Services</a>
-        <a href="./Contact.html">Contact</a>
-        </div>
-    </header>
-    <a href="contact.html" class="hire-btn">
-            Let's Talk
-        </a>
 
-    </nav>
-    <!-- Home / Hero Section -->
+    <title>About Page</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #02030f;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        /* NAVBAR */
+
+        header {
+            width: 100%;
+            height: 55px;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        nav {
+            width: 660px;
+            max-width: 90%;
+            height: 55px;
+            margin: auto;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 13px;
+            font-style: italic;
+            color: white;
+        }
+
+        .logo span {
+            color: #ff4f55;
+        }
+
+        .Nav-links {
+            display: flex;
+            gap: 25px;
+        }
+
+        .Nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 9px;
+            transition: 0.3s;
+        }
+
+        .Nav-links a:hover {
+            color: #ff4f55;
+        }
+
+        /* ABOUT */
+
+        .hero {
+            width: 660px;
+            max-width: 90%;
+            margin: 48px auto 0;
+
+            display: grid;
+            grid-template-columns: 230px 1fr;
+            gap: 100px;
+            align-items: start;
+        }
+
+        /* IMAGE */
+
+        .profile {
+            width: 230px;
+            height: 235px;
+
+            background: white;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            overflow: hidden;
+        }
+
+        .profile img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        /* CONTENT */
+
+        .about-content h1 {
+            font-size: 29px;
+            font-weight: 400;
+            font-style: italic;
+            margin-bottom: 5px;
+        }
+
+        .intro {
+            color: #ff4f55;
+            font-size: 9px;
+            font-style: italic;
+            margin-bottom: 8px;
+        }
+
+        .description {
+            color: #77777f;
+            font-size: 8px;
+            line-height: 1.7;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        /* SKILLS */
+
+        .skills {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px 40px;
+
+            margin-bottom: 20px;
+        }
+
+        .skills p {
+            color: white;
+            font-size: 10px;
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+
+        /* BUTTON */
+
+        .contact-btn {
+            display: inline-block;
+
+            background: #ff4f55;
+            color: white;
+
+            text-decoration: none;
+
+            font-size: 8px;
+
+            padding: 9px 20px;
+
+            border-radius: 4px;
+
+            transition: 0.3s;
+        }
+
+        .contact-btn:hover {
+            background: #e63d43;
+            transform: translateY(-2px);
+        }
+
+        /* LANGUAGES */
+
+        .languages {
+            width: 660px;
+            max-width: 90%;
+
+            margin: 65px auto 0;
+
+            text-align: center;
+        }
+
+        .languages h2 {
+            font-size: 16px;
+            font-style: italic;
+            font-weight: 500;
+
+            padding-bottom: 8px;
+
+            position: relative;
+        }
+
+        .languages h2::after {
+            content: "";
+
+            position: absolute;
+
+            width: 45px;
+            height: 2px;
+
+            background: #ff4f55;
+
+            bottom: 0;
+            left: 50%;
+
+            transform: translateX(-50%);
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 750px) {
+
+            nav {
+                width: 90%;
+            }
+
+            .Nav-links {
+                gap: 12px;
+            }
+
+            .Nav-links a {
+                font-size: 8px;
+            }
+
+            .hero {
+                width: 90%;
+
+                grid-template-columns: 1fr;
+
+                gap: 35px;
+
+                justify-items: center;
+            }
+
+            .about-content {
+                text-align: center;
+                width: 100%;
+            }
+
+            .description {
+                max-width: 450px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .skills {
+                width: 280px;
+                margin-left: auto;
+                margin-right: auto;
+
+                text-align: left;
+            }
+
+            .languages {
+                width: 90%;
+            }
+        }
+
+        @media (max-width: 500px) {
+
+            header {
+                height: auto;
+                padding: 15px 0;
+            }
+
+            nav {
+                height: auto;
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .Nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero {
+                margin-top: 35px;
+            }
+
+            .profile {
+                width: 220px;
+                height: 225px;
+            }
+
+            .about-content h1 {
+                font-size: 27px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <header>
+        <nav>
+
+            <div class="logo">
+                Portfo<span>lio</span>
+            </div>
+
+            <div class="Nav-links">
+
+                <a href="./index.html">Home</a>
+
+                <a href="./About.html">About Me</a>
+
+                <a href="./Experience.html">Experience</a>
+
+                <a href="./Skills.html">Skills</a>
+
+                <a href="./Achievements.html">Achievements</a>
+
+                <a href="./Projects.html">Projects</a>
+
+                <a href="./Contact.html">Contact</a>
+
+            </div>
+
+        </nav>
+    </header>
+
+
+    <!-- ABOUT SECTION -->
+
     <section class="hero">
 
-        <!-- Left Side -->
-        <div class="hero-text">
+        <!-- PROFILE IMAGE -->
 
-            <h1>
-                Hey! I am<br>
-                <span>Web Developer</span>
-            </h1>
+        <div class="profile">
 
-            <p>
-                I am a passionate web developer who creates
-                modern, responsive and user-friendly websites.
-                I enjoy designing beautiful and simple websites.
-            </p>
-
-            <div class="buttons">
-                <a href="contact.html" class="btn-primary">
-                    Hire Me
-                </a>
-
-                <a href="work.html" class="btn-secondary">
-                    My Work
-                </a>
-            </div>
+            <img
+                src="./images/profile.png"
+                alt="Profile Picture"
+            >
 
         </div>
 
 
-        <!-- Right Side -->
-        <div class="profile-area">
+        <!-- ABOUT CONTENT -->
 
-            <div class="circle circle-one"></div>
+        <div class="about-content">
 
-            <div class="circle circle-two"></div>
-            <div class="profile">
-                <img src="khan" alt="Profile Photo">
+            <h1>About Me</h1>
+
+            <p class="intro">
+                Hi, My name is Geek101 !!
+            </p>
+
+            <p class="description">
+                I am a B.Tech Final Year Student of XYZ College,
+                Pursuing My Degree in XYZ. I have a keen interest
+                in Problem Solving and finding new and Dynamic Ideas.
+            </p>
+
+            <p class="description">
+                I am a Machine Learning Enthusiast & Front-end Web
+                Developer. I can provide clean code and pixel perfect
+                design.
+            </p>
+
+
+            <!-- SKILLS -->
+
+            <div class="skills">
+
+                <div>
+                    <p>1. Problem Solving</p>
+                    <p>3. Machine Learning</p>
+                </div>
+
+                <div>
+                    <p>2. DSA</p>
+                    <p>4. Web Development</p>
+                </div>
+
             </div>
+
+
+            <!-- BUTTON -->
+
+            <a href="./Contact.html" class="contact-btn">
+                Contact Me
+            </a>
 
         </div>
 
     </section>
-    
+
+
+    <!-- LANGUAGES -->
+
+    <section class="languages">
+
+        <h2>Languages</h2>
+
+    </section>
 
 </body>
 </html>
