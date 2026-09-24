@@ -1,197 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact Page</title>
-<style>
-  :root{
-    --bg:#141414;
-    --text:#f2f2f2;
-    --muted:#a8a8a8;
-    --line:#3a3a3a;
-    --gold:#c9a15a;
-    --blue:#4aa3ff;
-  }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  *{ box-sizing:border-box; margin:0; padding:0; }
+    <title>Contact Form</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
 
-  body{
-    background:var(--bg);
-    color:var(--text);
-    font-family:'Segoe UI', Arial, sans-serif;
-  }
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-  header{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:22px 60px;
-    border-bottom:1px solid #232323;
-  }
-
-  .Nav-links{
-    display:flex;
-    gap:36px;
-  }
-
-  .Nav-links a{
-    color:var(--text);
-    text-decoration:none;
-    font-size:15px;
-    opacity:.85;
-  }
-
-  .Nav-links a:hover{ opacity:1; }
-
-  .hire-btn{
-    color:var(--bg);
-    background:var(--text);
-    text-decoration:none;
-    padding:10px 22px;
-    font-size:14px;
-    font-weight:600;
-    border-radius:2px;
-  }
-
-  /* ---------- Contact Section ---------- */
-
-  .contact{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    align-items:center;
-    gap:60px;
-    max-width:1100px;
-    margin:100px auto;
-    padding:0 40px;
-  }
-
-  /* Left: form */
-
-  .contact-form{
-    display:flex;
-    flex-direction:column;
-    gap:34px;
-  }
-
-  .field{
-    display:flex;
-    flex-direction:column;
-    gap:10px;
-  }
-
-  .field label{
-    font-size:14px;
-    color:var(--muted);
-  }
-
-  .field input,
-  .field textarea{
-    background:transparent;
-    border:none;
-    border-bottom:1px solid var(--line);
-    color:var(--text);
-    font-size:15px;
-    padding:6px 2px;
-    font-family:inherit;
-    resize:vertical;
-    min-height:24px;
-  }
-
-  .field input:focus,
-  .field textarea:focus{
-    outline:none;
-    border-bottom-color:var(--gold);
-  }
-
-  .submit-btn{
-    position:relative;
-    margin-top:10px;
-    padding:16px 20px;
-    background:#fff;
-    color:#141414;
-    font-size:13px;
-    font-weight:700;
-    letter-spacing:1.5px;
-    border:none;
-    cursor:pointer;
-  }
-
-  .submit-btn::before{
-    content:"";
-    position:absolute;
-    inset:0;
-    padding:2px;
-    border-radius:2px;
-    background:linear-gradient(90deg,#ff8a3d,#4aa3ff);
-    -webkit-mask:linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    -webkit-mask-composite:xor;
-    mask-composite:exclude;
-    z-index:-1;
-  }
-
-  .submit-btn:hover{ filter:brightness(0.96); }
-
-  /* Right: heading */
-
-  .contact-info{
-    position:relative;
-    padding:40px 20px;
-  }
-
-  .squiggle{
-    position:absolute;
-    top:-40px;
-    left:-40px;
-    width:380px;
-    height:420px;
-    opacity:.5;
-    z-index:0;
-  }
-
-  .contact-info h2{
-    position:relative;
-    z-index:1;
-    font-size:56px;
-    font-weight:600;
-    line-height:1.15;
-  }
-
-  .contact-info h2 .accent{
-    color:var(--blue);
-  }
-
-  .dash-row{
-    display:flex;
-    align-items:center;
-    gap:18px;
-    position:relative;
-    z-index:1;
-  }
-
-  .dash-row .dash{
-    width:60px;
-    height:2px;
-    background:var(--gold);
-  }
-
-  .contact-info p{
-    position:relative;
-    z-index:1;
-    margin-top:26px;
-    max-width:320px;
-    color:var(--muted);
-    font-size:14px;
-    line-height:1.7;
-  }
-
-  @media (max-width:800px){
-    .contact{ grid-template-columns:1fr; }
-    .contact-info h2{ font-size:42px; }
-    header{ padding:18px 24px; }
-    .Nav-links{ gap:18px; }
-  }
-</style>
 </head>
 <body>
 
@@ -202,51 +22,299 @@
       <a href="./Service.html">Services</a>
       <a href="./Contact.html">Contact</a>
     </div>
-    <a href="contact.html" class="hire-btn">Let's Talk</a>
-  </header>
+    
+</header>
+    </body>
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-  <section class="contact">
+body {
+    font-family: Arial, sans-serif;
+    background: #f3c928;
+    min-height: 100vh;
+}
 
-    <!-- Left: form -->
-    <form class="contact-form">
-      <div class="field">
-        <label for="name">Your Name</label>
-        <input type="text" id="name" name="name" required>
-      </div>
+/* Main page */
+.page {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
-      <div class="field">
-        <label for="email">Your Email</label>
-        <input type="email" id="email" name="email" required>
-      </div>
+/* Contact black box */
+.contact-box {
+    width: 82%;
+    max-width: 1100px;
+    height: 570px;
+    background: #171716;
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
 
-      <div class="field">
-        <label for="message">Share your thoughts</label>
-        <textarea id="message" name="message" rows="1" required></textarea>
-      </div>
+/* Left navigation */
+.side-menu {
+    position: absolute;
+    left: 25px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
 
-      <button type="submit" class="submit-btn">SHARE YOUR FEEDBACK</button>
-    </form>
+.side-menu a {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: #777;
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
 
-    <!-- Right: heading -->
-    <div class="contact-info">
-      <svg class="squiggle" viewBox="0 0 300 340" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M150 10C60 10 15 70 20 140C24 200 90 210 110 260C125 300 100 330 130 330C190 330 260 250 260 170C260 90 220 10 150 10Z"
-              stroke="#8a8a8a" stroke-width="1.2"/>
-      </svg>
+.side-menu .active {
+    background: #f3c928;
+    color: white;
+}
 
-      <h2>Contact</h2>
-      <div class="dash-row">
-        <span class="dash"></span>
-        <h2 class="accent">Us</h2>
-      </div>
+/* Social icons */
+.social-icons {
+    position: absolute;
+    top: 25px;
+    right: 30px;
+    display: flex;
+    gap: 8px;
+}
 
-      <p>
-        It is very important for us to keep in touch with you,
-        so we are always ready to answer any question that interests you. Shoot!
-      </p>
+.social-icons a {
+    width: 23px;
+    height: 23px;
+    border-radius: 50%;
+    background: white;
+    color: #222;
+    text-decoration: none;
+    font-size: 10px;
+    font-weight: bold;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Form area */
+.contact-form {
+    position: absolute;
+    left: 22%;
+    top: 95px;
+    width: 300px;
+    z-index: 5;
+}
+
+.contact-form h1 {
+    color: white;
+    font-size: 25px;
+    margin-bottom: 12px;
+}
+
+.contact-form h1 span {
+    color: #f3c928;
+}
+
+.description {
+    color: #aaa;
+    font-size: 11px;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+/* Labels */
+form label {
+    display: block;
+    color: white;
+    font-size: 10px;
+    margin-bottom: 5px;
+}
+
+/* Input */
+form input {
+    width: 150px;
+    height: 30px;
+    background: #555;
+    border: none;
+    border-radius: 6px;
+    outline: none;
+    margin-bottom: 12px;
+    padding: 5px 10px;
+    color: white;
+}
+
+/* Text area */
+form textarea {
+    width: 150px;
+    height: 75px;
+    background: #555;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    resize: none;
+    padding: 8px;
+    color: white;
+    font-size: 10px;
+    margin-bottom: 12px;
+}
+
+form textarea::placeholder {
+    color: #3eb91f;
+}
+
+/* Button */
+form button {
+    display: block;
+    background: #f3c928;
+    border: none;
+    border-radius: 7px;
+    padding: 7px 15px;
+    font-size: 8px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+form button:hover {
+    background: #fff;
+}
+
+/* Person section */
+.person {
+    position: absolute;
+    right: 30px;
+    bottom: 0;
+    width: 430px;
+    height: 430px;
+}
+
+/* Yellow background shape */
+.yellow-shape {
+    position: absolute;
+    width: 290px;
+    height: 290px;
+    background: #f3c928;
+    border-radius: 45% 55% 50% 50%;
+    left: 70px;
+    top: 80px;
+    transform: rotate(15deg);
+}
+
+/* Person image */
+.person img {
+    position: absolute;
+    width: 390px;
+    height: auto;
+    bottom: -5px;
+    left: 0;
+    z-index: 2;
+}
+
+/* Responsive */
+@media (max-width: 800px) {
+
+    .contact-box {
+        width: 90%;
+        height: 600px;
+    }
+
+    .contact-form {
+        left: 15%;
+    }
+
+    .person {
+        right: -80px;
+        opacity: 0.8;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .contact-box {
+        height: 650px;
+    }
+
+    .contact-form {
+        left: 80px;
+        top: 80px;
+    }
+
+    .person {
+        right: -130px;
+        bottom: -20px;
+    }
+
+    .social-icons {
+        right: 15px;
+    }
+
+}
+</style>
+        <div class="page">
+
+        <!-- Left Side Navigation -->
+        <div class="side-menu">
+            <a href="">⌂</a>
+            <a href="#" class="active">✉️</a>
+            <a href="#">ⓘ</a>
+        </div>
+
+        <!-- Contact Box -->
+        <div class="contact-box">
+
+            <!-- Social Icons -->
+            <div class="social-icons">
+                <a href="https://www.facebook.com/" target="blank">f</a>
+                <a href="https://www.instagram.com" target="blank">◎</a>
+                <a href="https://www.linkedin.com" target="blank">in</a>
+                <a href="https://www.github.com" target="blank">◉</a>
+                <a href="https://www.youtube.com" taget="blank">▶️</a>
+            </div>
+             <section class="contact-section"></section>
+            
+    <!-- Text and form on right -->
+    <div class="contact-form">
+
+        <h1>Let's <span>talk</span></h1>
+
+        <p>
+            To request a quote or want to meet up for coffee,
+            contact me directly or fill out the form and I will
+            get back to you soon.
+        </p>
+
+        <form>
+
+            <label>Your Name</label>
+            <input type="text">
+
+            <label>Your Email</label>
+            <input type="email">
+
+            <label>Your Message</label>
+            <textarea placeholder="Type your message here..."></textarea>
+
+            <button type="submit">submit</button>
+
+        </form>
+
     </div>
 
-  </section>
-
+</section>
 </body>
 </html>
